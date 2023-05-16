@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Board {
+  width: calc(80px * 8);
+  height: calc(80px * 8);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Cell {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Black {
+  background-color: #613c1e;
+}
+
+.White {
+  background-color: #e0b78a;
+}
