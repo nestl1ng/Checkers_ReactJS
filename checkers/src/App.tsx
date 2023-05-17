@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import React, {useState} from "react"
+import {useState} from "react"
 import './App.css';
 import BoardComp from './components/BoardComp';
 import { Board } from "./models/Board";
@@ -16,6 +16,7 @@ useEffect(() => {
 function restart(){
   const newBoard = new Board();
   newBoard.initCells();
+  newBoard.addFigures();
   setBoard(newBoard);
 }
 

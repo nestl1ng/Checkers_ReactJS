@@ -26,8 +26,14 @@
   align-items: center;
 }
 
+.Cell img{
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
 .Black {
-  background-color: #613c1e;
+  background-color: #765b45;
 }
 
 .White {

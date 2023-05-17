@@ -7,7 +7,10 @@ interface CellProps {
 
 const CellComp: FC<CellProps> = ({cell}) => {
   return (
-    <div className={["Cell", cell.color].join(' ')}></div>
+    <div className={["Cell", cell.color].join(' ')}>
+      {cell.figure?.logo && <img src={cell.figure.logo} alt=""></img>}
+    </div>
+
   );
 };
 
