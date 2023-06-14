@@ -10,4 +10,20 @@ export class Pawn extends Figure {
         this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
         this.name = FigureNames.PAWN;
     }
+
+    canMove(target: Cell): boolean {
+        if (!super.canMove(target)) {
+            return false
+        } else {
+            const direction = this.cell.figure?.color === Colors.BLACK ? 1 : -1;
+            if ((target.y === this.cell.y + direction)
+                && (target.x === this.cell.x + 1 || target.x === this.cell.x - 1)) {
+                return true
+            }
+        } return false
+    }
+
+    // moveFigure(target: Cell): void {
+
+    // }
 }

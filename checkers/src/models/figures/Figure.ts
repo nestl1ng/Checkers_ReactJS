@@ -1,4 +1,5 @@
 import logo from "../../assets/BlackChecker.png"
+import { Board } from "../Board";
 import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 
@@ -25,10 +26,13 @@ export class Figure {
     }
 
     canMove(target: Cell): boolean {
-        return true;
+        if(target.figure?.color===this.color){
+            return false
+        } else {
+            return true
+        } 
     }
 
     moveFigure(target: Cell) {
-        return true;
     }
 }
