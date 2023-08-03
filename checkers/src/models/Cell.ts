@@ -21,13 +21,13 @@ export class Cell {
         this.id = Math.random();
     }
 
-    isEmpty():boolean {
+    isEmpty(): boolean {
         return this.figure === null;
     }
 
-    isEnemy(target:Cell):boolean{
-        if(target.figure){
-            return this.figure?.color!==target.figure.color;
+    isEnemy(target: Cell): boolean {
+        if (target && target.figure) {
+            return this.figure?.color !== target!.figure.color;
         } return false
     }
 
@@ -41,12 +41,13 @@ export class Cell {
             const dy = this.y < target.y ? 1 : -1;
             const dx = this.x < target.x ? 1 : -1;
             for (let i = 1; i < absY; i++) {
-                if (!this.board.getCell(this.x + dx * i, this.y + dy * i).isEmpty()) {
+                if (!this.board.getCell(this.x + dx * i, this.y + dy * i)!.isEmpty()) {
                     return false
                 } else return true
             }
         } return true
     }
+
 
     setFigure(figure: Figure) {
         this.figure = figure;
@@ -61,3 +62,4 @@ export class Cell {
         }
     }
 }
+

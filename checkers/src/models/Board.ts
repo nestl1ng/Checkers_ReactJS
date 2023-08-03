@@ -38,19 +38,21 @@ export class Board {
     private addPawns() {
         for (let i = 0; i < 8; i++) {
             if (i % 2 === 1) {
-                new Pawn(Colors.BLACK, this.getCell(i, 0));
-                new Pawn(Colors.WHITE, this.getCell(i, 6));
-                new Pawn(Colors.BLACK, this.getCell(i, 2));
+                new Pawn(Colors.BLACK, this.getCell(i, 0)!);
+                new Pawn(Colors.WHITE, this.getCell(i, 6)!);
+                new Pawn(Colors.BLACK, this.getCell(i, 2)!);
             } else {
-                new Pawn(Colors.BLACK, this.getCell(i, 1));
-                new Pawn(Colors.WHITE, this.getCell(i, 5));
-                new Pawn(Colors.WHITE, this.getCell(i, 7));
+                new Pawn(Colors.BLACK, this.getCell(i, 1)!);
+                new Pawn(Colors.WHITE, this.getCell(i, 5)!);
+                new Pawn(Colors.WHITE, this.getCell(i, 7)!);
             }
         }
     }
 
     public getCell(x: number, y: number) {
-        return this.cells[y][x];
+        if ((x >= 0 && x <= 7) && (y >= 0 && y <= 7)){
+            return this.cells[y][x];
+        } else return null 
     }
 
     public addFigures() {
